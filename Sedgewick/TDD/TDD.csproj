@@ -48,6 +48,14 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ch1.4\Sedgewick1_4_11.cs" />
+    <Compile Include="Ch1.4\Sedgewick1_4_12.cs" />
+    <Compile Include="Ch1.4\Sedgewick1_4_16.cs" />
+    <Compile Include="Ch1.4\Sedgewick1_4_21.cs" />
+    <Compile Include="Ch1.4\Sedgewick1_4_27.cs" />
+    <Compile Include="Ch1.4\Sedgewick1_4_35.cs" />
+    <Compile Include="Ch1.4\Sedgewick1_4_4.cs" />
+    <Compile Include="Ch1.4\Sedgewick1_4_8.cs" />
     <Compile Include="DragonCurve.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
