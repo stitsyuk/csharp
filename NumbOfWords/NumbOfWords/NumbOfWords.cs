@@ -9,20 +9,29 @@ namespace NumbOfWords
         static void Main(string[] args)
         {
             StreamReader objReader = new StreamReader("W6.md");
-            var sLine = "";
+            var s = "";
             var words = 0;
-            string[] text;
             ArrayList arrText = new ArrayList();
-            while (sLine != null)
+            s = objReader.ReadLine();
+            for (var i = 1; i < s.Length; i++)
             {
-                sLine = objReader.ReadLine();
-                if (sLine == null)
+                if (s == null)
                     break;
-                text = sLine.Split(' ');
-                Console.WriteLine("Number of words in this line: " + text.Length); /*I leave this sentence for you that you can see what he sees like words.
-                You can check every line. Where 1 is written there are empty lines and he sees ' ' as a word.*/
-                words += text.Length;
-                arrText.Add(sLine);
+                if (s[i - 1] == ' ')
+                {
+                    if (s[i] == ' ')
+                    {
+                        continue;
+                    }
+                    continue;
+                }
+                if ((((s[i - 1] >= 'a' && s[i - 1] <= 'z') || (s[i - 1] > 'A' && s[i - 1] < 'Z')) && ((s[i] <= 'a') || ((s[i] >= 'z') && (s[i] < 'A')) || (s[i] > 'Z'))))
+                {
+                    words++;
+                    continue;
+                }
+                else
+                    continue;
             }
             objReader.Close();
             Console.WriteLine("Number of words in W6.md file: " + words);
