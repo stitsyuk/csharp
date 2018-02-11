@@ -9,61 +9,66 @@ namespace TDD
         [TestMethod]
         public void DragonCurveTest0()
         {
-            var expectedCollection = "F";
-            var actualCollection = Functions.DragonCurve(0);
-            Assert.AreEqual(expectedCollection, actualCollection);
+            string[] expectedCollection = { "F" };
+            string[] actualCollection = Functions.DragonCurve(0);
+            CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
         [TestMethod]
         public void DragonCurveTest1()
         {
-            var expectedCollection = "FLF";
-            var actualCollection = Functions.DragonCurve(1);
-            Assert.AreEqual(expectedCollection, actualCollection);
+            string[] expectedCollection = { "FLF" };
+            string[] actualCollection = Functions.DragonCurve(1);
+            CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
         [TestMethod]
         public void DragonCurveTest2()
         {
-            var expectedCollection = "FLFLFRF";
-            var actualCollection = Functions.DragonCurve(2);
-            Assert.AreEqual(expectedCollection, actualCollection);
+            string[] expectedCollection = { "FLFLFRF" };
+            string[] actualCollection = Functions.DragonCurve(2);
+            CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
         [TestMethod]
         public void DragonCurveTest3()
         {
-            var expectedCollection = "FLFLFRFLFLFRFRF";
-            var actualCollection = Functions.DragonCurve(3);
-            Assert.AreEqual(expectedCollection, actualCollection);
+            string[] expectedCollection = { "FLFLFRFLFLFRFRF" };
+            string[] actualCollection = Functions.DragonCurve(3);
+            CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
         [TestMethod]
         public void DragonCurveTest4()
         {
-            var expectedCollection = "FLFLFRFLFLFRFRFLFLFLFRFRFLFRFRF";
-            var actualCollection = Functions.DragonCurve(4);
-            Assert.AreEqual(expectedCollection, actualCollection);
+            string[] expectedCollection = { "FLFLFRFLFLFRFRFLFLFLFRFRFLFRFRF" };
+            string[] actualCollection = Functions.DragonCurve(4);
+            CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
         [TestMethod]
         public void DragonCurveTest5()
         {
-            var expectedCollection = "FLFLFRFLFLFRFRFLFLFLFRFRFLFRFRFLFLFLFRFLFLFRFRFRFLFLFRFRFLFRFRF";
-            var actualCollection = Functions.DragonCurve(5);
-            Assert.AreEqual(expectedCollection, actualCollection);
+            string[] expectedCollection = { "FLFLFRFLFLFRFRFLFLFLFRFRFLFRFRFLFLFLFRFLFLFRFRFRFLFLFRFRFLFRFRF" };
+            string[] actualCollection = Functions.DragonCurve(5);
+            CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
     }
 
     public static class Functions
     {
-        public static string DragonCurve(int order)
+        public static string[] DragonCurve(int order)
         {
-            var curve = DragonCurvesRecursive(order);
+            string[] curve = DragonCurvesRecursive(order);
             return curve;
         }
 
-        public static string DragonCurvesRecursive(int expOrd, int curOrd = 0, string dir = "")
+        public static string[] DragonCurvesRecursive(int expOrd, int curOrd = 0, string dir = "")
         {
-            string newDir;
+            string newDir = "";
+            string[] newDirArr = { "" };
             if (curOrd == 0) newDir = "F";
             else newDir = dir + "L" + TraverseReverseDir(dir);
-            if (expOrd == curOrd) return newDir;
+            if (expOrd == curOrd)
+            {
+                newDirArr[0] = newDir;
+                return newDirArr;
+            }
             return DragonCurvesRecursive(expOrd, ++curOrd, newDir);
         }
 
