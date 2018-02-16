@@ -11,13 +11,14 @@ average of the rows, where the weights of each test score are in a one-dimension
 array weights[]. For example, to assign the last of the three tests in our example to
 be twice the weight of the others, you would use
 double[] weights = { .25, .25, .50 };
-Note that the weights should sum to 1.*/
+Note that the weights should sum to 1.
+Didn't understand the task properly. For my level of understanding I think the task is ok*/
         [TestMethod]
         public void S1_4_16()
         {
-            double expectedCollection = 0.25;
-            double actualCollection = Functions16.S1_4_16(4);
-            Assert.AreEqual(expectedCollection, actualCollection);
+            double expectedValue = 0.25;
+            double actualValue = Functions16.S1_4_16(4);
+            Assert.AreEqual(expectedValue, actualValue);
         }
     }
     public static class Functions16

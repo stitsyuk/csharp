@@ -13,11 +13,17 @@ birthdays to be uniform random integers between 0 and 364.*/
         [TestMethod]
         public void S1_4_35()
         {
-            int expectedCollection = 0;
-            int actualCollection = Functions35.S1_4_35(365);
-            if (actualCollection > 1 && actualCollection < 365)
-                expectedCollection = actualCollection;
-            Assert.AreEqual(expectedCollection, actualCollection);
+            bool expectedAnswer = true;
+            bool Answer;
+            int actualValue1 = Functions35.S1_4_35(364);
+            int actualValue2 = Functions35.S1_4_35(364);
+            int actualValue3 = Functions35.S1_4_35(364);
+            int actualValue = (actualValue1 + actualValue2 + actualValue3) / 3;
+            if (actualValue < 364)
+                Answer = true;
+            else
+                Answer = false;
+            Assert.AreEqual(expectedAnswer, Answer);
         }
     }
     public static class Functions35

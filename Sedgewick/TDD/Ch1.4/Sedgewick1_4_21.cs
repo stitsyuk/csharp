@@ -17,30 +17,31 @@ the longest contiguous sequence of equal values.
         [TestMethod]
         public void S1_4_21a()
         {
+            int[] initialCollection = { 1, 2, 2, 2, 2, 5, 5, 5, 3 };
             int[] expectedCollection = { 1, 4 };
-            int[] actualCollection = Functions21.S1_4_21a();
+            int[] actualCollection = Functions21.S1_4_21a(initialCollection);
             CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
         [TestMethod]
         public void S1_4_21b()
         {
+            int[] initialCollection = { 5, 5, 5, 5, 3, 8, 8, 8, 1 };
             int[] expectedCollection = { 0, 4 };
-            int[] actualCollection = Functions21.S1_4_21b();
+            int[] actualCollection = Functions21.S1_4_21a(initialCollection);
             CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
     }
     public static class Functions21
     {
-        public static int[] S1_4_21a()
+        public static int[] S1_4_21a(int[] Array)
         {
-            int[] a = { 1, 2, 2, 2, 2, 5, 5, 5, 3 };
             var pos = 0;
             var lng = 1;
             var c = 0;
             var d = 0;
             for (var i = 1; i < 9; i++)
             {
-                if (a[i] == a[i-1])
+                if (Array[i] == Array[i-1])
                 {
                     lng++;
                 }
@@ -55,35 +56,8 @@ the longest contiguous sequence of equal values.
                     pos = i;
                 }
             }
-            int[] b = { d, c };
-            return b;
-        }
-        public static int[] S1_4_21b()
-        {
-            int[] a = { 5, 5, 5, 5, 3, 8, 8, 8, 1 };
-            var pos = 0;
-            var lng = 1;
-            var c = 0;
-            var d = 0;
-            for (var i = 1; i < 9; i++)
-            {
-                if (a[i] == a[i - 1])
-                {
-                    lng++;
-                }
-                else
-                {
-                    if (lng > c)
-                    {
-                        c = lng;
-                        lng = 1;
-                        d = pos;
-                    }
-                    pos = i;
-                }
-            }
-            int[] b = { d, c };
-            return b;
+            int[] newArray = { d, c };
+            return newArray;
         }
     }
 }

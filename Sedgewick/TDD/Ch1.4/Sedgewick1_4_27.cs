@@ -12,33 +12,25 @@ this rumor for the first time will immediately tell it to one other guest, chose
 random from all the people at the party except Alice and the person from whom
 they heard it. If a person (including Bob) hears the rumor for a second time, he or
 she will not propagate it further. Write a program to estimate the probability that
-everyone at the party (except Alice) will hear the rumor before it stops propagating.*/
+everyone at the party (except Alice) will hear the rumor before it stops propagating.
+Suppose it's only way to make tests with random result. As I remember in TeamViewer I tried to prove you that this task is ok*/
         [TestMethod]
-        public void S1_4_27a()
+        public void S1_4_27()
         {
-            int expectedCollection = 0;
-            int actualCollection = Functions27.S1_4_27(10);
-            if (actualCollection > 1 && actualCollection < 10)
-                expectedCollection = actualCollection;
-            Assert.AreEqual(expectedCollection, actualCollection);
-        }
-        [TestMethod]
-        public void S1_4_27b()
-        {
-            int expectedCollection = 0;
-            int actualCollection = Functions27.S1_4_27(50);
-            if (actualCollection > 1 && actualCollection < 50)
-                expectedCollection = actualCollection;
-            Assert.AreEqual(expectedCollection, actualCollection);
-        }
-        [TestMethod]
-        public void S1_4_27c()
-        {
-            int expectedCollection = 0;
-            int actualCollection = Functions27.S1_4_27(100);
-            if (actualCollection > 1 && actualCollection < 100)
-                expectedCollection = actualCollection;
-            Assert.AreEqual(expectedCollection, actualCollection);
+            bool expectedAnswer = true;
+            bool Answer;
+            int actualValue1 = Functions27.S1_4_27(10);
+            double prob1 = actualValue1 / 10;
+            int actualValue2 = Functions27.S1_4_27(50);
+            double prob2 = actualValue2 / 50;
+            int actualValue3 = Functions27.S1_4_27(100);
+            double prob3 = actualValue3 / 100;
+            double probFinal = (prob1 + prob2 + prob3) / 3;
+            if (probFinal < 1)
+                Answer = true;
+            else
+                Answer = false;
+            Assert.AreEqual(expectedAnswer, Answer);
         }
     }
     public static class Functions27

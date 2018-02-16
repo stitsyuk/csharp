@@ -11,46 +11,39 @@ a[] of String values.*/
         [TestMethod]
         public void S1_4_4a()
         {
-            int[] expectedCollection = { 1, 0 };
-            int[] actualCollection = Functions4.S1_4_4(2);
+            string[] initialCollection = { "abc", "def", "ghi" };
+            string[] expectedCollection = { "ghi", "def", "abc" };
+            string[] actualCollection = Functions4.S1_4_4(initialCollection);
             CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
         [TestMethod]
         public void S1_4_4b()
         {
-            int[] expectedCollection = { 4, 3, 2, 1, 0 };
-            int[] actualCollection = Functions4.S1_4_4(5);
+            string[] initialCollection = { "qwe", "rty", "uio" };
+            string[] expectedCollection = { "uio", "rty", "qwe" };
+            string[] actualCollection = Functions4.S1_4_4(initialCollection);
             CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
         [TestMethod]
         public void S1_4_4c()
         {
-            int[] expectedCollection = { 7, 6, 5, 4, 3, 2, 1, 0 };
-            int[] actualCollection = Functions4.S1_4_4(8);
-            CollectionAssert.AreEqual(expectedCollection, actualCollection);
-        }
-        [TestMethod]
-        public void S1_4_4d()
-        {
-            int[] expectedCollection = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
-            int[] actualCollection = Functions4.S1_4_4(10);
+            string[] initialCollection = { "asd", "fgh", "jkl" };
+            string[] expectedCollection = { "jkl", "fgh", "asd" };
+            string[] actualCollection = Functions4.S1_4_4(initialCollection);
             CollectionAssert.AreEqual(expectedCollection, actualCollection);
         }
     }
     public static class Functions4
     {
-        public static int[] S1_4_4(int N)
+        public static string[] S1_4_4(string[] Collection)
         {
-            int[] a = new int[N];
-            for (var i = 0; i < N; i++)
-                a[i] = i;
-            for (var i = 0; i < N / 2; i++)
+            for (var i = 0; i < Collection.Length / 2; i++)
             {
-                int temp = a[i];
-                a[i] = a[N - i - 1];
-                a[N - i - 1] = temp;
+                var temp = Collection[i];
+                Collection[i] = Collection[Collection.Length - i - 1];
+                Collection[Collection.Length - i - 1] = temp;
             }
-            return a;
+            return Collection;
         }
     }
 }
