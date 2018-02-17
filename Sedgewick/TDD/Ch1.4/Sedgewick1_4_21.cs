@@ -33,7 +33,7 @@ the longest contiguous sequence of equal values.
     }
     public static class Functions21
     {
-        public static int[] S1_4_21a(int[] Array)
+        public static int[] S1_4_21a(int[] array)
         {
             var pos = 0;
             var lng = 1;
@@ -41,7 +41,7 @@ the longest contiguous sequence of equal values.
             var d = 0;
             for (var i = 1; i < 9; i++)
             {
-                if (Array[i] == Array[i-1])
+                if (array[i] == array[i-1])
                 {
                     lng++;
                 }

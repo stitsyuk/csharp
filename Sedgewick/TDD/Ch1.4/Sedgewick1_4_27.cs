@@ -18,7 +18,7 @@ Suppose it's only way to make tests with random result. As I remember in TeamVie
         public void S1_4_27()
         {
             bool expectedAnswer = true;
-            bool Answer;
+            bool answer;
             int actualValue1 = Functions27.S1_4_27(10);
             double prob1 = actualValue1 / 10;
             int actualValue2 = Functions27.S1_4_27(50);
@@ -27,10 +27,10 @@ Suppose it's only way to make tests with random result. As I remember in TeamVie
             double prob3 = actualValue3 / 100;
             double probFinal = (prob1 + prob2 + prob3) / 3;
             if (probFinal < 1)
-                Answer = true;
+                answer = true;
             else
-                Answer = false;
-            Assert.AreEqual(expectedAnswer, Answer);
+                answer = false;
+            Assert.AreEqual(expectedAnswer, answer);
         }
     }
     public static class Functions27

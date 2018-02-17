@@ -24,32 +24,32 @@ The code should make a [3, 10] array from [6, 5] array*/
     }
     public static class Functions12
     {
-        public static int[,] S1_4_12(int[,] Collection)
+        public static int[,] S1_4_12(int[,] collection)
         {
             int[,] b = new int[3, 10];
             for (var i = 0; i < 5; i++)
             {
-                b[0, i] = Collection[0, i];
+                b[0, i] = collection[0, i];
             }
             for (var i = 0; i < 5; i++)
             {
-                b[0, i + 5] = Collection[1, i];
+                b[0, i + 5] = collection[1, i];
             }
             for (var i = 0; i < 5; i++)
             {
-                b[1, i] = Collection[2, i];
+                b[1, i] = collection[2, i];
             }
             for (var i = 0; i < 5; i++)
             {
-                b[1, i + 5] = Collection[3, i];
+                b[1, i + 5] = collection[3, i];
             }
             for (var i = 0; i < 5; i++)
             {
-                b[2, i] = Collection[4, i];
+                b[2, i] = collection[4, i];
             }
             for (var i = 0; i < 5; i++)
             {
-                b[2, i + 5] = Collection[5, i];
+                b[2, i + 5] = collection[5, i];
             }
             return b;
         }

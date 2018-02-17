@@ -35,15 +35,15 @@ a[] of String values.*/
     }
     public static class Functions4
     {
-        public static string[] S1_4_4(string[] Collection)
+        public static string[] S1_4_4(string[] collection)
         {
-            for (var i = 0; i < Collection.Length / 2; i++)
+            for (var i = 0; i < collection.Length / 2; i++)
             {
-                var temp = Collection[i];
-                Collection[i] = Collection[Collection.Length - i - 1];
-                Collection[Collection.Length - i - 1] = temp;
+                var temp = collection[i];
+                collection[i] = collection[collection.Length - i - 1];
+                collection[collection.Length - i - 1] = temp;
             }
-            return Collection;
+            return collection;
         }
     }
 }
