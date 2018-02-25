@@ -58,6 +58,8 @@
     <Compile Include="Ch1.4\Sedgewick1_4_8.cs" />
     <Compile Include="DragonCurve.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortArrOfDig.cs" />
+    <Compile Include="SortArrOfStr.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
